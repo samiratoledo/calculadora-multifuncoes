@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+</head>
+
+<body>
+    <div class="principal">
+
+        <div>
+            <!--------contarCaracteres--------->
+            <div class="subDiv">
+                <p class="title">Contar a quantidade de caracteres</p>
+                <div>
+                    <form class="formQnt" action="">
+                        <input class="string" type="text" placeholder="Digite um texto">
+                        <button class="btn"> Calcular</button>
+                    </form>
+
+                    <p class="resultQnt"></p>
+                </div>
+            </div>
+
+            <!--------parOuImpar--------->
+
+            <div class="subDiv">
+                <p class="title">Número par ou ímpar?</p>
+
+                <div>
+                    <form class="formPi" action="">
+                        <input class="num4" type="text" placeholder="Digite um número">
+                        <button class="btn">Descobrir</button>
+                    </form>
+
+                    <p class="resultPi"></p>
+                </div>
+            </div>
+
+        </div>
+
+        <!--------contarCaracteres--------->
+
+        <div class="subDiv">
+            <p class="title">Descobrir Média</p>
+            <div>
+                <form class="formMd" action="">
+                    <input class="num1" type="text" placeholder="Digite o 1º número">
+                    <input class="num2" type="text" placeholder="Digite o 2º número">
+                    <input class="num3" type="text" placeholder="Digite o 3º número">
+                    <button class="btn">Calcular</button>
+                </form>
+            </div>
+            <p class="resultMd"></p>
+        </div>
+    </div>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            background-color: rgb(215, 250, 228);
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .subDiv {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            border-radius: 10px;
+            border-color: rgba(0, 0, 0, 0);
+            padding: 3%;
+            height: 8vh;
+            width: auto;
+            background-color: rgb(236, 252, 236);
+        }
+
+        .btn {
+            background-color: lightgreen;
+            border-radius: 10px;
+            padding: 1%;
+        }
+
+        .title {
+            color: green;
+            font-size: larger;
+            font-weight: bolder;
+            text-transform: uppercase;
+        }
+
+        .principal {
+            margin-top: 6%;
+            justify-content: center;
+            align-content: center;
+            margin-left: 25%;
+        }
+    </style>
+
+    <script>
+        /*Função para contar a quantidade de caracteres de uma string
+        Crie uma função chamada contarCaracteres que receba uma string e retorne a quantidade de caracteres dessa string.
+        Exemplo: se a string for "São Mateus", a função deve retornar 10.*/
+
+        //declaração de variaveis
+        let formQnt = document.querySelector(".formQnt");
+        let resultQnt = document.querySelector(".resultQnt")
+
+        //adicionando evento
+        formQnt.addEventListener("submit", (e) => {
+            e.preventDefault() // evita erro
+            let string = document.querySelector(".string").value; // retorna o valor do input string
+            console.log(string.value)
+            let contarCaracteres = string.length; //pega o tamanho da string 
+            console.log(contarCaracteres)
+
+            resultQnt.innerHTML = `A quantidade de caracteres é ${contarCaracteres}`; //apresenta no resultQnt no html
+
+        })
+
+
+        /*Função de cálculo de média
+        Crie uma função chamada calcularMedia que receba três números e retorne a média desses números.
+        Exemplo: para os parâmetros (10, 20, 30), a função deve retornar 20.*/
+
+        //declaração de variaveis
+        formMd = document.querySelector(".formMd");
+        let resultMd = document.querySelector(".resultMd");
+
+        //adicionando evento
+        formMd.addEventListener("submit", (e) => {
+            e.preventDefault()
+            let num1 = parseInt(document.querySelector(".num1").value) //atribuindo valor a num1
+            console.log(num1)
+            let num2 = parseInt(document.querySelector(".num2").value) //atribuindo valor a num2
+            let num3 = parseInt(document.querySelector(".num3").value) //atribuindo valor a num3
+
+            let calcularMedia = (num1 + num2 + num3) / 3; // atribuindo calculo para a media
+
+
+            resultMd.innerHTML = `A média de ${num1}, ${num2} e ${num3} é ${calcularMedia}` //resposta
+        })
+
+
+        /*(DESAFIO) Função para verificar se um número é par ou ímpar
+        Crie uma função chamada parOuImpar que receba um número e retorne uma string indicando se o número é "par" ou "ímpar".*/
+
+        //declaração de variaveis
+        let formPi = document.querySelector(".formPi")
+        let parOuImpar;
+        let resultPi = document.querySelector(".resultPi");
+
+        //adicionando evento
+        formPi.addEventListener("submit", (e) => {
+            e.preventDefault()
+            let num4 = document.querySelector(".num4").value; //atribuindo o valor do input a num4
+            console.log(num4.value)
+
+            if (num4 % 2 == 1) { // condição para impar
+                parOuImpar = `ímpar`;
+            } else if (num4 % 2 == 0) { //condição para par
+                parOuImpar = `par`;
+            }
+
+            resultPi.innerHTML = `O número ${num4} é ${parOuImpar}`; //resposta
+        })
+    </script>
+
+</body>
+
+</html>
