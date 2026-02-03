@@ -4,7 +4,6 @@ Este projeto é uma ferramenta utilitária desenvolvida para facilitar tarefas c
 
 ## 🔗 Demonstração
 > **Acesse o projeto aqui:** <br>(https://samiratoledo.github.io/calculadora-multifuncoes/) 🚀
-*(Substitua o link acima pelo link real do seu GitHub Pages)*
 
 ## 🛠️ Tecnologias e Conceitos Aplicados
 - **JavaScript (ES6+):** Implementação de lógica para manipulação de strings e operações aritméticas.
@@ -17,8 +16,3 @@ Este projeto é uma ferramenta utilitária desenvolvida para facilitar tarefas c
 - **Verificador de Paridade:** Sistema lógico que identifica se um número é Par ou Ímpar instantaneamente.
 - **Calculadora de Média:** Algoritmo para processamento aritmético de valores, entregando resultados precisos.
 - **Interface Centralizada:** Todas as ferramentas em um único dashboard, focando na agilidade do usuário.
-
-## 📝 Como executar o projeto
-1. Clone o repositório:
-   ```bash
-   git clone [https://github.com/samiratoledo/calculadora-multifuncoes.git](https://github.com/samiratoledo/calculadora-multifuncoes.git)
